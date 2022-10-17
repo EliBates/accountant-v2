@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@formkit/auto-animate': 1.0.0-beta.3
   '@headlessui/react': ^1.7.3
   '@headlessui/tailwindcss': ^0.1.1
   '@heroicons/react': 2.0.12
@@ -25,6 +26,7 @@ specifiers:
   eslint: 8.22.0
   eslint-config-next: 12.3.1
   jotai: ^1.8.5
+  microtip: ^0.2.2
   next: 12.3.1
   next-auth: ^4.12.3
   postcss: ^8.4.14
@@ -41,6 +43,7 @@ specifiers:
   zod: ^3.18.0
 
 dependencies:
+  '@formkit/auto-animate': 1.0.0-beta.3
   '@headlessui/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
   '@headlessui/tailwindcss': 0.1.1_5zjlt5w4ir2cay3te66iu3k3ji
   '@heroicons/react': 2.0.12_react@18.2.0
@@ -57,6 +60,7 @@ dependencies:
   date-fns: 2.29.3
   dayjs: 1.11.5
   jotai: 1.8.5_react@18.2.0
+  microtip: 0.2.2
   next: 12.3.1_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.12.3_azq6kxkn3od7qdylwkyksrwopy
   react: 18.2.0
@@ -135,6 +139,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@formkit/auto-animate/1.0.0-beta.3:
+    resolution: {integrity: sha512-glsi+ytwQpxT/Ctr9GtcIfVr4dO6mJ04mQbNU8MFSdCdqMopHtyfU5Fib0+9lNFIeR0luY4/0NW95/2R5pKsag==}
+    dev: false
 
   /@headlessui/react/1.7.3_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-LGp06SrGv7BMaIQlTs8s2G06moqkI0cb0b8stgq7KZ3xcHdH3qMP+cRyV7qe5x4XEW/IGY48BW4fLesD6NQLng==}
@@ -1885,6 +1893,10 @@ packages:
     dependencies:
       braces: 3.0.2
       picomatch: 2.3.1
+
+  /microtip/0.2.2:
+    resolution: {integrity: sha512-oah38eH5vSHVFP6yXjbKWOYt92mav++0j3zh844h1vhOscqEg7Rf4agDEIwUTFCcAPPdlhYUQMe6eZfHgD+4oQ==}
+    dev: false
 
   /mini-svg-data-uri/1.4.4:
     resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}

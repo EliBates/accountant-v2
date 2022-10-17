@@ -1,9 +1,10 @@
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Transaction } from "@prisma/client";
 import { CellContext } from "@tanstack/react-table";
 import clsx from "clsx";
 import { Fragment } from "react";
-import { Transaction } from "./TransactionTable";
+import { trpc } from "../../utils/trpc";
 
 interface Props {
   info: CellContext<Transaction, boolean>;
@@ -17,13 +18,12 @@ const OptionsMenu = (props: Props) => {
     table,
   } = props.info;
 
+  const deleteTransaction = trpc.transaction.remove.useMutation();
+  const utils = trpc.useContext();
+
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <Menu.Button
-        className={clsx(
-          "rounded-full border border-blue-200 p-2 hover:border-blue-300 hover:bg-blue-200"
-        )}
-      >
+      <Menu.Button className={clsx("rounded-full border border-blue-200 p-2 hover:border-blue-300 hover:bg-blue-200")}>
         <ChevronDownIcon className="h-4 w-4" />
       </Menu.Button>
 
@@ -65,6 +65,18 @@ const OptionsMenu = (props: Props) => {
             <Menu.Item>
               {({ active }) => (
                 <button
+                  onClick={() => {
+                    deleteTransaction.mutate(
+                      {
+                        id: props.info.row.original.id,
+                      },
+                      {
+                        onSuccess: () => {
+                          utils.transaction.invalidate();
+                        },
+                      }
+                    );
+                  }}
                   className={clsx(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block w-full px-4 py-2 text-left text-sm"

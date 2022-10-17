@@ -9,12 +9,7 @@ interface Props {
   href: string;
 }
 
-export default function MainNavItem({
-  icon,
-  name,
-  active,
-  href,
-}: Props): JSX.Element {
+export default function MainNavItem({ icon, name, active, href }: Props): JSX.Element {
   return (
     <div className="block w-full">
       <a

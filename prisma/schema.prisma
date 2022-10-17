@@ -71,9 +71,12 @@ model TransactionAccount {
 
 model Transaction {
     id                   String              @id @default(cuid())
-    amount               Float
-    description          String?
+    type                 String
     date                 DateTime
+    description          String?
     account              TransactionAccount? @relation(fields: [transactionAccountId], references: [id], onDelete: Cascade)
+    category             String
+    amount               BigInt
+    reviewed             Boolean
     transactionAccountId String?
 }

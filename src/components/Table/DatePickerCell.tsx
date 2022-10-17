@@ -4,11 +4,11 @@ import "react-day-picker/dist/style.css";
 import { format } from "date-fns";
 import { Popover, Transition } from "@headlessui/react";
 import { CellContext } from "@tanstack/react-table";
-import { Transaction } from "./TransactionTable";
 import dayjs from "dayjs";
+import { Transaction } from "@prisma/client";
 
 interface Props {
-  info: CellContext<Transaction, string>;
+  info: CellContext<Transaction, Date>;
 }
 
 const DatePickerCell = (props: Props) => {
@@ -22,7 +22,7 @@ const DatePickerCell = (props: Props) => {
   const initialDate = dayjs(getValue()).toDate();
   console.log(initialDate);
   const [date, setDate] = useState<Date>(initialDate);
-  const [tempDate, setTempDate] = useState<string>(getValue());
+  const [tempDate, setTempDate] = useState<string>(getValue().toDateString());
   const textInput = useRef<HTMLInputElement>(null);
 
   return (

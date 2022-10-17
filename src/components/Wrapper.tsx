@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import AccountsModal from "./Modal/AccountsModal";
 
 interface Props {
   children: React.ReactNode;
@@ -6,13 +7,10 @@ interface Props {
 
 const Wrapper = ({ children }: Props) => {
   return (
-    <div
-      className={clsx(
-        "flex flex-row w-full h-full min-h-screen overflow-hidden items-stretch"
-      )}
-    >
-      {children}
-    </div>
+    <>
+      <div className={clsx("flex h-full min-h-screen w-full flex-row items-stretch overflow-hidden")}>{children}</div>
+      <AccountsModal />
+    </>
   );
 };
 
